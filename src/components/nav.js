@@ -1,13 +1,24 @@
 import React from 'react'
 import {Link} from 'react-router';
+import Navigation from 'react-toolbox/lib/navigation';
+import Link2 from 'react-toolbox/lib/link';
 
-export default React.createClass({
-  render() {
+const Nav = React.createClass({
+  render: function() {
+    const actions = [
+      { label: 'Alarm', raised: true, icon: 'access_alarm'},
+      { label: 'Location', raised: true, accent: true, icon: 'room'}
+    ];
     return (
-      <div className="nav nav-pills nav-stacked">
-        <li><Link to="/page1">Page 1</Link></li>
-        <li><Link to="/page2">Page 2</Link></li>
-      </div>
+      <Navigation type="vertical">
+        <Link2 href="#/" label="GX" />
+        <Link2 href="#/expeditions" label="EXPEDITIONS" />
+        <Link2 href="#/about" label="ABOUT" />
+        <Link2 href="#/donate" label="DONATE" />
+        <Link2 href="#/account" label="ACCOUNT" />
+      </Navigation>
     )
   }
-})
+});
+
+export default Nav;

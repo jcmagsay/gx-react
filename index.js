@@ -8,14 +8,18 @@ import './assets/styles/bootstrap.css'
 import './assets/styles/index.less'
 
 // Components
-import Page1 from './src/components/page1.js';
-import Page2 from './src/components/page2.js';
+import Expeditions from './src/pages/expeditions.js';
+import About from './src/pages/about.js';
+import Donate from './src/pages/donate.js';
+import Account from './src/pages/account.js';
 
 render((
   <Router history={hashHistory}>
     <Route path="/" component={App}>
-      <Route path="/page1" component={Page1}/>
-      <Route path="/page2" component={Page2}/>
+      <Route path="/expeditions" component={Expeditions}/>
+      <Route path="/about" component={About}/>
+      <Route path="/donate" component={Donate}/>
+      <Route path="/account" component={Account}/>
     </Route>
   </Router>
 ), document.getElementById('app'));

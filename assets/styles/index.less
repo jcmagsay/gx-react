@@ -1,5 +1,72 @@
+// Width variables (appears count calculates by raw css)
+@width1: 150px; // Appears 2 times
 
-.nav {
-  width: 140px;
-  background-color: #EEF780;
+// Height variables (appears count calculates by raw css)
+@height1: 100px; // Appears 2 times
+@height2: 100vh; // Appears 3 times
+
+body {
+	font-family: Roboto;
+	margin: 0;
+}
+#container {
+	div {
+		&:first-of-type {
+			display: flex;
+			flex-direction: row;
+			height: @height2;
+		}
+	}
+}
+nav {
+	background-color: rgba(0,0,0,.1);
+	border-right: 1px solid rgba(0,0,0,.2);
+	height: @height2;
+	position: fixed;
+	width: @width1;
+	a {
+		color: rgba(0,0,0,.87);
+		cursor: pointer;
+		display: block;
+		padding: 24px;
+		text-decoration: none;
+		&:first-of-type {
+			background-color: rgba(140, 0, 0, 1);
+			color: rgba(255,255,255,.87);
+		}
+		&:not(:first-of-type) {
+			border-top: 1px solid rgba(0,0,0,.2);
+		}
+	}
+}
+main {
+	background-color: rgba(200,200,200,.1);
+	left: 150px;
+	position: absolute;
+	width: calc(100% - @width1);
+	.hero-section {
+		height: @height2;
+		text-align: center;
+		width: 100%;
+		header {
+			font-size: 48px;
+			height: @height1;
+		}
+		.hero-content {
+			font-size: 24px;
+			height: calc(100% - 200px);
+		}
+		footer {
+			height: @height1;
+			button {
+				padding: 0;
+				a {
+					color: rgba(255,255,255,1);
+					display: inline-block;
+					min-width: @width1;
+					padding: 24px;
+				}
+			}
+		}
+	}
 }

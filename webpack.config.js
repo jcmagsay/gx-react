@@ -18,10 +18,12 @@ module.exports = {
             { test: /\.js$/, exclude: /node_modules/, loader: babelLoader, includes: ['./index.js', path.join(__dirname, 'src')] },
             { test: /\.css$/, loaders: ["style-loader", "css-loader"] },
             { test: /\.less$/, loaders: ["style-loader", "css-loader", "less-loader"] },
+            { test: /\.scss$/, loaders: ["style-loader", "css-loader", "sass-loader"] },
             { test: /\.(png|jpg|ttf|woff|svg|otf|eot|svg).*?$/, loader: "file-loader" },
         ]
     },
     plugins: [
-      new webpack.NoErrorsPlugin()
+      new webpack.NoErrorsPlugin(),
+      new webpack.HotModuleReplacementPlugin()
     ]
 }
